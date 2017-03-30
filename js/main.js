@@ -72,7 +72,7 @@
   }).toMaster();
 
   var synth3 = new Tone.FMSynth({
-			"modulationIndex" : 2.22,
+			"modulationIndex" : 12.22,
 			"envelope" : {
 				"attack" : 0.01,
 				"decay" : 0.2
@@ -99,7 +99,7 @@ var synth4 = new Tone.MonoSynth({
   			}
   		});
 
-var volume3 = new Tone.Volume(-30);
+var volume3 = new Tone.Volume(15);
 synth3.chain(volume3, Tone.Master);
 var volume4 = new Tone.Volume(-10);
 synth4.chain(volume4, Tone.Master);
