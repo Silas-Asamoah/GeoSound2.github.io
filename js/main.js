@@ -125,7 +125,7 @@ function init(){
 
   document.body.appendChild( renderer.domElement );
 
-  var SpotLight1 = new THREE.SpotLight( 0xff2020, 0.75 );
+  var SpotLight1 = new THREE.SpotLight( 0x000000, 0.75 );
 	SpotLight1.position.set( -10,80,20 );
 	SpotLight1.target.position.set( -200,88,10);
 	SpotLight1.castShadow = true;
@@ -135,20 +135,20 @@ function init(){
   SpotLight1.shadowMapWidth = 2048;
 	SpotLight1.shadowMapHeight = 2048;
 
-	var SpotLight2 = new THREE.SpotLight( 0xff2020, 0.95 );
-	SpotLight2.position.set( 60,80,50 );
+	var SpotLight2 = new THREE.SpotLight( 0x000000, 0.95 );
+	SpotLight2.position.set( 40,80,30 );
   // SpotLight2.position.y = 100;
 	SpotLight2.target.position.set( 0,-20,-30);
 	SpotLight2.castShadow = true;
-  SpotLight2.shadowDarkness = 0.1;
-  SpotLight1.shadowBias = 0.00001;
+  SpotLight2.shadowDarkness = 0.2;
+  SpotLight1.shadowBias = 0.001;
 	var helper2 = new THREE.SpotLightHelper( SpotLight2 );
 	SpotLight2.shadowMapWidth = 2048;
 	SpotLight2.shadowMapHeight = 2048;
 
 	var directionalLight = new THREE.DirectionalLight( 'rgb(255,255,255)', 1 );
   directionalLight.castShadow = true;
-  directionalLight.shadowDarkness = 0.1;
+  directionalLight.shadowDarkness = 0.2;
   directionalLight.shadowMapWidth = 2048;
 	directionalLight.shadowMapHeight = 2048;
   var dirhelper = new THREE.DirectionalLightHelper(directionalLight, 1);
@@ -230,6 +230,8 @@ function init(){
   circ4.scale.set(1.65,1.75,1.5);
 
   scene.add(directionalLight);
+  // scene.add(SpotLight1);
+  scene.add(SpotLight2);
   scene.add(pointLight1);
   scene.add(pointLight2);
   scene.add(ambient);
