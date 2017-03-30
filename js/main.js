@@ -72,13 +72,13 @@
   }).toMaster();
 
   var synth3 = new Tone.FMSynth({
-			"modulationIndex" : 12.22,
+			"modulationIndex" : 2.22,
 			"envelope" : {
 				"attack" : 0.01,
 				"decay" : 0.2
 			},
 			"modulation" : {
-				"type" : "square"
+				"type" : "sine10"
 			},
 			"modulationEnvelope" : {
 				"attack" : 0.2,
@@ -99,9 +99,18 @@ var synth4 = new Tone.MonoSynth({
   			}
   		});
 
-var volume = new Tone.Volume(-10);
-synth4.chain(volume, Tone.Master);
-synth3.chain(volume, Tone.Master);
+var volume3 = new Tone.Volume(10);
+synth3.chain(volume3, Tone.Master);
+var volume4 = new Tone.Volume(-10);
+synth4.chain(volume4, Tone.Master);
+
+// var btn = document.getElementById("button");
+//   btn.addEventListener("click", function() {
+//    window.location.href = "www.google.com";
+//  //  navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+//   // destinationType: Camera.DestinationType.FILE_URI
+// // });
+// });
 
 
 
@@ -356,6 +365,11 @@ function init(){
   }
   window.addEventListener( 'resize', onWindowResize, false );
   console.log("%c www.yaninma.com ","background: #355493; color: #fff");
+  window.addEventListener( 'load', function(){
+  	var loadingPage = document.getElementById("loadingPage");
+  	loadingPage.style.display = "none";
+  });
+
 }
 
 
