@@ -99,7 +99,7 @@ var synth4 = new Tone.MonoSynth({
   			}
   		});
 
-var volume3 = new Tone.Volume(10);
+var volume3 = new Tone.Volume(-10);
 synth3.chain(volume3, Tone.Master);
 var volume4 = new Tone.Volume(-10);
 synth4.chain(volume4, Tone.Master);
