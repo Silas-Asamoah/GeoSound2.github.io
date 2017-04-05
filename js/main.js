@@ -425,6 +425,16 @@ function update(){
 }
 
 function generateSound(){
+  var contact1 = document.getElementById('contact1');
+  contact1.innerHTML = "contact1:" + " " + " " + " " + 0;
+  var contact2 = document.getElementById('contact2');
+  contact2.innerHTML = "contact2:" + " " + " " + " " + 0;
+  var contact3 = document.getElementById('contact3');
+  contact3.innerHTML = "contact3:" + " " + " " + " " + 0;
+  var contact4 = document.getElementById('contact4');
+  contact4.innerHTML = "contact4:" + " " + " " + " " + 0;
+
+
   var originPoint1 = cylinder1.position.clone();
   for (var vertexIndex1 = 0; vertexIndex1 < cylinder1.geometry.vertices.length; vertexIndex1++){
     var localVertex1 = cylinder1.geometry.vertices[vertexIndex1].clone();
@@ -435,6 +445,7 @@ function generateSound(){
     // console.log(collisionResults1);
     if ( collisionResults1.length > 0 && collisionResults1[0].distance < directionVector1.length() ){
      console.log(collisionResults1[0].distance);
+     contact1.innerHTML = "contact1:" + " " + " " +collisionResults1[0].distance;
       plane2.material = new THREE.MeshLambertMaterial({color: 0xd3263d});
       switch(Math.floor(collisionResults1[0].distance)){
       case 7:note2 = "E4";break;case 8:note2 = "D2";break;case 9:note2 = "D2";break;case 10:note2 = "D2";break;
@@ -459,6 +470,7 @@ function generateSound(){
     if ( collisionResults2.length > 0 && collisionResults2[0].distance < directionVector2.length() ){
 
      // console.log(" Hit ");
+       contact2.innerHTML = "contact2:" + " " + " " +collisionResults2[0].distance;
        switch(Math.floor(collisionResults2[0].distance)){
        case 5:note1 = "C6";break;case 6:note1 = "C6";break;case 7:note1 = "C6";break;case 8:note1 = "D6";break;
        case 9:note1 = "D6";break;case 10:note1 = "D6";break;case 11:note1 = "E6";break;case 12:note1 = "E6";break;
@@ -485,7 +497,8 @@ function generateSound(){
    if ( collisionResults3.length > 0 && collisionResults3[0].distance < directionVector3.length() ){
 
     //  console.log(" Hit ");
-     switch(Math.floor(collisionResults3[0].distance)){
+       contact3.innerHTML = "contact3:" + " " + " " +collisionResults3[0].distance;
+       switch(Math.floor(collisionResults3[0].distance)){
        case 5:note3 = "C3";break;case 6:note3 = "C3";break;case 7:note3 = "C3";break;case 8:note3 = "D3";break;
        case 9:note3 = "D4";break;case 10:note3 = "D3";break;case 11:note3 = "E3";break;case 12:note3 = "E4";break;
        case 13:note3 = "E3";break;case 14:note3 = "A3";break;case 15:note3 = "C3";break;case 16:note3 = "C3";break;
@@ -511,6 +524,7 @@ function generateSound(){
     if ( collisionResults4.length > 0 && collisionResults4[0].distance>4 && collisionResults4[0].distance < directionVector4.length() ){
 
       // console.log(collisionResults4[0].distance);
+      contact4.innerHTML = "contact4:" + " " + " " +collisionResults4[0].distance;
       switch(Math.floor(collisionResults4[0].distance)){
       case 5:note4 = "C3";break;case 6:note4 = "C4";break;case 7:note4 = "C5";break;case 8:note4 = "D4";break;
       case 9:note4 = "D4";break;case 10:note4 = "D3";break;case 11:note4 = "E3";break;case 12:note4 = "E4";break;
