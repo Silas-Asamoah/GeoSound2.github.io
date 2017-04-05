@@ -3,6 +3,8 @@
   var objects = [];
   var mesh = [];
   var speed = [];
+
+  var counter = 0;
   speed.push(Math.random()/14, Math.random()/12,
     Math.random()/14,Math.random()/12,Math.random()/14,
     Math.random()/12,Math.random()/12,Math.random()/12,
@@ -103,6 +105,8 @@ var volume3 = new Tone.Volume(15);
 synth3.chain(volume3, Tone.Master);
 var volume4 = new Tone.Volume(-10);
 synth4.chain(volume4, Tone.Master);
+
+Tone.Master.mute = true;
 
 // var btn = document.getElementById("button");
 //   btn.addEventListener("click", function() {
@@ -404,6 +408,11 @@ function animate(){
 }
 
 function update(){
+  counter ++;
+  if (counter > 20){
+    Tone.Master.mute = false;
+  }
+
   for(var i = 0; i < mesh.length; i ++){
 		mesh[i].rotation.x += slider1.value/1500;
 	}
