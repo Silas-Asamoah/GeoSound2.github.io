@@ -444,7 +444,7 @@ function generateSound(){
     var collisionResults1 = ray1.intersectObjects( collidableMeshList );
     // console.log(collisionResults1);
     if ( collisionResults1.length > 0 && collisionResults1[0].distance < directionVector1.length() ){
-     console.log(collisionResults1[0].distance);
+    //  console.log(collisionResults1[0].distance);
      contact1.innerHTML = "contact1:" + " " + " " +collisionResults1[0].distance;
       plane2.material = new THREE.MeshLambertMaterial({color: 0xd3263d});
       switch(Math.floor(collisionResults1[0].distance)){
